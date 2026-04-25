@@ -1,0 +1,534 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #5cc46c, #0bb3b8);
+    color: #000000;
+}
+
+/* Header */
+.parallax-header {
+    background: url('https://res.cloudinary.com/ddocnukbc/image/upload/v1734382618/EQUIPOS_DE_LABORATORIO_VOLUMEN_2_xn3evt.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 70px 0;
+    position: relative;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+header .logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+header h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    animation: fadeInDown 1.5s ease;
+}
+
+header p {
+    font-size: 1.6em;
+    font-style: italic;
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #3c5c6c;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+    background-color: #0bb3b8;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    margin: 15px 0;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.2em;
+    text-align: justify;
+    padding: 20px;
+}
+
+.about-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+}
+
+/* Services Section */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: linear-gradient(to bottom, #3c5c6c, #1d2c3c);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #5cc46c;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.service-card p {
+    font-size: 1.1em;
+}
+
+/* Contact Form Section */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Botón de envío */
+button {
+    padding: 10px 20px;
+    background-color:  #5cc46c ;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #3c5c6c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* General Styles */
+#gallery {
+    position: relative;
+    overflow: hidden; /* Oculta imágenes fuera del contenedor */
+}
+
+.gallery-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out; /* Transición suave para el desplazamiento */
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 300px; /* Ancho fijo de las imágenes */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.gallery-item p {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Botones de navegación */
+.btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+
+/* Sección de Clientes */
+#clients .clients-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los logos se acomoden en varias filas */
+    justify-content: space-around; /* Centra los logos horizontalmente */
+    gap: 20px; /* Espaciado entre los logos */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+.client-logo {
+    width: 120px;  /* Establece un tamaño fijo para los logos */
+    height: 120px; /* Mantiene la altura consistente para todos los logos */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurarse de que las imágenes de los logos sean responsivas */
+.client-logo img {
+    width: 90%;  /* Ajusta la imagen al tamaño del contenedor */
+    height: 90%; /* Asegura que la altura se ajuste también */
+    object-fit: contain;  /* Ajusta la imagen dentro del contenedor sin recortar */
+    transition: transform 0.3s ease-in-out;  /* Efecto de zoom */
+}
+
+.client-logo:hover img {
+    transform: scale(1.1);  /* Efecto de aumento al pasar el ratón */
+}
+
+.clients-container {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Estilos generales de la sección de consulta */
+#reports {
+    padding: 20px;
+    text-align: center;
+}
+
+#report-form {
+    display: block;
+    width: 100%;
+    max-width: 480px; /* Limita el tamaño del formulario */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 10px 0;
+    position: relative; /* Necesario para colocar el botón */
+}
+
+#report-code {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Separación entre el input y el botón */
+    box-sizing: border-box;
+    padding-right: 40px; /* Espacio para el botón */
+}
+
+#report-form .btn {
+    width: 100%; /* Hace que el botón ocupe el mismo ancho que el input */
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, #5cc46c, #0bb3b8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#report-form .btn:hover {
+    background-color: #0056b3;
+}
+
+#report-result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.result-container a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #5cc46c, #0bb3b8);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.result-container a:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Imágenes */
+.gallery-container img {
+    flex: 0 0 auto; /* Evita que las imágenes se ajusten automáticamente */
+    width: 400px; /* Ajusta el ancho */
+    height: 300px; /* Ajusta el alto */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de navegación */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn.prev {
+    left: 10px;
+}
+
+.btn.next {
+    right: 10px;
+}
+
+.status-message {
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .navbar a {
+        font-size: 1em;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image {
+        max-width: 80%;
+    }
+}
